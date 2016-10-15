@@ -43,6 +43,9 @@ class Victima(models.Model):
     fecha_nacimiento = models.DateField(null=True)
     fotos = models.ManyToManyField('ReferenciaPrensa')
 
+    def __str__(self):
+        return '{} ({})'. format(self.nombres, self.apellido, self.genero)
+
 
 class ReferenciaPrensa(models.Model):
     url = models.URLField(unique=True)
